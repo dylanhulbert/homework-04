@@ -1,0 +1,23 @@
+.quizText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-style: italic;
+    color: blue;
+}
+
+.sideText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-style: normal;
+    color: cadetblue;
+}
+
+#center {
+    font-style: center;
+
+}
+
+#inside-block-top {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red; 
+}
