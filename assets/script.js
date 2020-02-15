@@ -1,34 +1,5 @@
-var submitEl = document.querySelector("#submit");
-var nameInput = document.querySelector("#name");
 
-var submissionResponseEl = document.querySelector("#response");
-
-submitEl.addEventListener("click", function(event) {
-  event.preventDefault();
-
-  console.log(event);
-  
-  var response = nameInput.value;
-  submissionResponseEl.textContent = response;
-});
-
-
-var timeEl = document.querySelector(".countdown");
-var secondsLeft = 20;
-
-function setTime() {
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeEl.textContent = secondsLeft;
-
-    if(secondsLeft === 0) {
-      clearInterval(timerInterval);
-    }
-  }, 2000);
-}
-
-setTime();
-
+// this variable is the question set
 var allQuestions = [{
 	question: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
   choices: [
@@ -75,30 +46,29 @@ var allQuestions = [{
 	correctAnswer: 1
 }];
 
-//Reference to tags
-var questionTitle = document.getElementById('questionTitle');
-var selectionList = document.getElementById('selectionList');
-var nextButton = document.getElementById('nextButton');
+// these variables identify the elements on the page by id
+var questionTitle = document.getElementById("questionTitle");
+var selectionList = document.getElementById("selectionList");
+var nextButton = document.getElementById("nextButton");
 
-//Initiating some variables
+
 var i = 0;
-var length1 = allQuestions.length;
 var correctAnswer = 0;
 
-nextButton.onclick = function() {
-    /*itterate through questions*/    
-    if(i>allQuestions.length -1){/*go to first when reached last*/
-       i=0;       
+nextButton.onclick = function() { 
+  if(i>allQuestions.length -1){
+       i=4;       
     }    
     populateQuestion(i);
     i++;
+    return highScore
 };
 
-function populateQuestion(qNum) {
+function populateQuestion() {
     var individualQuestion = allQuestions[i];
     questionTitle.innerText = individualQuestion.question;
     
-    selectionList.innerHTML = ""; //reset choices list
+    selectionList.innerHTML = ""; 
     for(key in individualQuestion.choices){
         var radioBtnName = "question"+i+"_choice";
         var choiceText = individualQuestion.choices[key];
@@ -107,10 +77,51 @@ function populateQuestion(qNum) {
 }
 
 function createLi(name, choiceText) {
-        var e = document.createElement('li');
-        var radioHtml = '<input type="radio" name="' + name + '"';    
-        radioHtml += '/>';
-        radioHtml += choiceText;        
-        e.innerHTML = radioHtml;        
-        return e;
+        var selectFrom = document.createElement('li');
+        var selectionBtn = '<input type="radio" name="' + name + '"';    
+        selectionBtn += '/>';
+        selectionBtn += choiceText;        
+        selectFrom.innerHTML = selectionBtn;        
+        return selectFrom;
     }
+    
+
+// this adds the initials to the list
+var submitEl = document.querySelector("#submit");
+var nameInput = document.querySelector("#name");
+var submissionResponseEl = document.querySelector("#response");
+
+submitEl.addEventListener("click", function(event) {
+event.preventDefault();
+  
+var response = nameInput.value;
+submissionResponseEl.textContent = response;
+});
+
+// this adds the initials to the list
+var submitEl = document.querySelector("#submit");
+var nameInput = document.querySelector("#name");
+var submissionResponseEl = document.querySelector("#response");
+
+submitEl.addEventListener("click", function(event) {
+event.preventDefault();
+  
+var response = nameInput.value;
+submissionResponseEl.textContent = response;
+});
+
+// this is the timer
+var timeEl = document.querySelector(".countdown");
+var secondsLeft = 20;
+
+function setTime() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft;
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+    }
+  }, 2000);
+}
+setTime();

@@ -10,87 +10,77 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-
-                <h1>javascript quiz</h1>
-
-            </div>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>javascript quiz</h1>
         </div>
-        <div class="row">
-            <div class="col-sm-4">
+    </div>
+    <div class="row">
 
-                    <div class="card" style="border: 0;">
-                    <div class="card-header">
-                        Intitials
-                    <h1 class="score"></h1>
-                    </div>
+        <div class="col-sm-4">
+            <div class="card" style="border: 0;">
+                <div class="card-header">
+                    initials
+                    <h1 class="highScore"></h1>
+                </div>
                     <div class="card-body">
-                      <h5 class="card-title text-center" id="response">
+                    <h5 class="card-title text-center" id="response">
                         <form>
-                            <input placeholder="name" id="name" />
-        
-                            <button id="submit" class="btn btn-secondary">Submit</button>
-                          </form>
-                      </h5>
+                        <input placeholder="name" id="name" />
+                        <button id="submit" class="btn btn-secondary">submit</button>
+                        </form>
+                    </h5>
                     </div>
-                    </div>
-
             </div>
-            <div class="col-sm-4">
+        </div>
 
-                <div class="card" style="border: 0;">
-                    <div class="card-header">
-                        High Score
+        <div class="col-sm-4">
+            <div class="card" style="border: 0;">
+                <div class="card-header">
+                    high score
                     <h1 class="score"></h1>
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title text-center highScore">?</h5>
-                    </div>
-                    </div>
-
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center" id="highScore"></h5>
+                </div>
             </div>
-            <div class="col-sm-4">
+        </div>
 
-
-                <div class="card" style="border: 0;">
-                    <div class="card-header">
-                        Timer
+        <div class="col-sm-4">
+            <div class="card" style="border: 0;">
+                <div class="card-header">
+                    timer
                     <h1 class="timer"></h1>
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title text-center countdown">20</h5>
-                    </div>
-                    </div>
-
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center countdown">20</h5>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
 
-                <div class="card" style="border: 0;">
-                    <div class="card-header">
-                      Questions
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title" id="questionTitle"></h5>    
-                        <ul id ='selectionList'> </ul>
-                        <button type="button" id ="nextButton" class="btn btn-secondary btn-lg btn-block"> go </button>
-                    </div>
-                  </div>
+    </div>
 
+    <div class="row">
+        <div class="col-sm-12">
+             <div class="card" style="border: 0;">
+                <div class="card-header">
+                    questions
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="questionTitle"></h5>    
+                    <ul id ='selectionList'></ul>
+                    <button type="button" id ="nextButton" class="btn btn-secondary btn-lg btn-block"> go </button>
+                </div>
             </div>
         </div>
+    </div>
         <div class="row">
             <div class="col-sm-12">
-
             </div>
         </div>
     </div>
 
-
-
-<script type="text/javascript" src="assets/script.js"></script>
+    <script type="text/javascript" src="assets/script.js"></script>
 </body>
 </html>
