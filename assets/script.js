@@ -34,8 +34,8 @@ var allQuestions = [{
   choices: [
   "The User's machine running a Web browser", 
   "The Web server", 
-  "A central machine deep within Netscape's corporate offices", 
-  "These answers are all wrong!"],
+  "Your mom's iPhone", 
+  "Robots"],
 	correctAnswer: 0
 },
 {
@@ -43,8 +43,8 @@ var allQuestions = [{
   choices: [
   "script href = “formValidation.js”", 
   "script source = “formValidation.js”", 
-  "script name = “formValidation.js”", 
-  "script src = “formValidation.js”"],
+  "script src = “formValidation.js”", 
+  "script refer to external computer thing = “formValidation.js”"],
 	correctAnswer: 3
 },
 {
@@ -53,7 +53,7 @@ var allQuestions = [{
   "var", 
   "if", 
   "for", 
-  "create"],
+  "declare.variable.please"],
 	correctAnswer: 0
 },
 {
@@ -62,7 +62,7 @@ var allQuestions = [{
   "//this is a comment", 
   "!this here is a comment", 
   "-- comments for everyone! --", 
-  "WHAT?!"],
+  "c.nope"],
 	correctAnswer: 0
 },
 {	
@@ -71,7 +71,7 @@ var allQuestions = [{
   "()function.myFunction", 
   "function = myFunction", 
   "function myFunction", 
-  "FtoTheUnction.whatever"],
+  "myFunction.whatever"],
 	correctAnswer: 1
 }];
 
