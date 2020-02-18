@@ -1,18 +1,20 @@
-.quizText {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    font-style: italic;
-    color: blue;
+/* basics */
+h1 {
+    margin-bottom: 10px;
 }
-
-.midText {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    font-style: normal;
-    color: cadetblue;
+li{
+    text-align: left;
+    color: grey;
+    margin: 10px;
 }
-
-#center {
-    font-style: center;
-
+/* classes */
+.row {
+    margin: 20px;
+}
+.card-title {
+    margin-bottom: 10px;
+}
+.btn {
+    margin: 10px;
+    text-align: left;
 }
