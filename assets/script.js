@@ -1,10 +1,13 @@
 $(document).ready(function () {
+// meant to unstick bottons on mobile devices
 $("button").on("touchstart", function(){ 
     $(this).removeClass("mobileHoverFix");
     });
 $("button").on("touchend", function(){ 
     $(this).addClass("mobileHoverFix");
 });
+
+// all my questions
     var allQuestions = [
     {
     question: "when a user views a page containing a javascript program, which machine actually executes the script?",
@@ -37,13 +40,14 @@ $("button").on("touchend", function(){
     correctAnswer: 4,
     },
     ];
-    
+ 
+// variables
     var currentQuestion = 0;
     var timeleft = 60;
     var timer;
     var highScores = [];
 
-
+// jq selectors and action
     $("#questionBox").hide();
     $("#inputName").hide();
 
@@ -57,6 +61,7 @@ $("button").on("touchend", function(){
         $("#button-4").html(allQuestions[currentQuestion].answers[3]);
         document.getElementById("timer").innerHTML = timeleft;
 
+// timer function
         timer = setInterval(function () {
         timeleft -= 1;
         document.getElementById("timer").innerHTML = timeleft;
@@ -67,6 +72,7 @@ $("button").on("touchend", function(){
         }, 1000);
         });
 
+// checks for correct or incorrect, and displays result on card footer
     function checkAnswer(event) {
         if (parseInt(event.target.value) === allQuestions[currentQuestion].correctAnswer) {
             $("#correctIncorrect").html("<hl />" + "correct");
@@ -84,12 +90,14 @@ $("button").on("touchend", function(){
             }
         }
 
+// completes game when finished with 6 questions
         currentQuestion++;
         if (currentQuestion === 6) {
             endGame();
             return;
         }
-        
+ 
+// places question text and questions
         $("#questionText").html(allQuestions[currentQuestion].question);
         $("#button-1").html(allQuestions[currentQuestion].answers[0]);
         $("#button-2").html(allQuestions[currentQuestion].answers[1]);
@@ -99,6 +107,7 @@ $("button").on("touchend", function(){
     
     $(".yourAnswer").on("click", (event) => checkAnswer(event));
 
+// ends game and prompts for input and clears timer
     function endGame() {
         $("#questionBox").hide();
         $("#inputName").show();
@@ -107,7 +116,8 @@ $("button").on("touchend", function(){
     }
 
     init();
-
+    
+// generates score and presents with initials
     function renderScores() {
         $("#scoresList").html = "";
         for (var i = 0; i < highScores.length; i++) {
@@ -117,7 +127,7 @@ $("button").on("touchend", function(){
             $("#scoresList").append(li);
         }
     }
-
+// generates the first stored score
     function init() {
         var storedScores = JSON.parse(localStorage.getItem("scores"));
         if (storedScores !== null) {
@@ -125,11 +135,14 @@ $("button").on("touchend", function(){
         }
         renderScores();
     }
-    
+
+
+// executes function to store the score as a string in local storage
     function storeScores() {
         localStorage.setItem("scores", JSON.stringify(highScores));
     };
 
+// jq writes score to page
     $("#submit").on("click", function (event) {
         event.preventDefault();
         var initialsText = $("#initials").val().trim();
@@ -146,6 +159,7 @@ $("button").on("touchend", function(){
         window.location.href = "index.html";
     });
 
+// jq clears scores
     $("#clearScores").on("click", function () {
         $("#scoresList").empty();
         localStorage.clear();
