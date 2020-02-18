@@ -1,5 +1,11 @@
 $(document).ready(function () {
-var allQuestions = [
+$("button").on("touchstart", function(){ 
+    $(this).removeClass("mobileHoverFix");
+    });
+$("button").on("touchend", function(){ 
+    $(this).addClass("mobileHoverFix");
+});
+    var allQuestions = [
     {
     question: "when a user views a page containing a javascript program, which machine actually executes the script?",
     answers: ["the user's machine running a web browser", "the web server", "your mom's iphone", "robots"],

@@ -18,3 +18,7 @@ li{
     margin: 10px;
     text-align: left;
 }
+.mobileHoverFix:hover,
+.mobileHoverFix.hover{
+    background-position: 0 0px;
+}
